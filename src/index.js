@@ -1,17 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import Card from "./Cards";
+import "./index.css";
+import Sdata from "./Sdata";
+
+const ncard = (val, index)=> {
+  return (
+    <Card
+      sname={val.sname}
+      imgsrc={val.imgsrc}
+      title={val.title}
+      link={val.links}
+    />
+  );
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <>
+    <h1 className="heading_style">List of TOP NetFlix Orignal Series</h1>
+    {Sdata.map(ncard)} 
+  </>,
+  document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+/*
+function ncard(val){
+
+}
+//fat arrow function
+
+const ncard = (val)=> {
+
+}
+*/
